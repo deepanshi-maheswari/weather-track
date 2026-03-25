@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app-wrap">
+    <h1 class="app-title">🌤 Weather App</h1>
+
+    <div class="search-row">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="City name likhein... e.g. Delhi, London"
+        autocomplete="off"
+      />
+      <button id="searchBtn" onclick="fetchWeather()">Search</button>
+    </div>
+
+    <div class="loader" id="loader"></div>
+    <div class="error-box" id="errorBox"></div>
+
+    <!-- Weather Card -->
+    <div class="weather-card" id="weatherCard">
+
+      <!-- Top Section -->
+      <div class="card-top">
+        <div class="left-info">
+          <div class="city-name" id="cityName">—</div>
+          <span class="country-badge" id="countryBadge">—</span>
+          <div class="description" id="desc">—</div>
+          <div class="feels-like" id="feelsLike">Feels like —</div>
+        </div>
+        <div class="right-info">
+          <div class="weather-icon" id="wIcon">🌤</div>
+          <div class="temp-display">
+            <span id="temp">—</span>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">Humidity</div>
+          <div class="stat-value"><span id="humidity">—</span><span class="unit">%</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Wind</div>
+          <div class="stat-value"><span id="wind">—</span><span class="unit"> m/s</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Pressure</div>
+          <div class="stat-value"><span id="pressure">—</span><span class="unit"> hPa</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Visibility</div>
+          <div class="stat-value"><span id="visibility">—</span><span class="unit"> km</span></div>
+        </div>
+      </div>
+
+      <!-- Sunrise / Sunset -->
+      <div class="sun-row">
+        <div class="sun-item">🌅 Sunrise: <span class="sun-time" id="sunrise">—</span></div>
+        <div class="sun-item">🌇 Sunset: <span class="sun-time" id="sunset">—</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
